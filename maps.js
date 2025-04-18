@@ -197,3 +197,17 @@ myMap.set("Apple", 3);
 let objPlain = Object.fromEntries(myMap.entries())
 
 console.log(objPlain);
+console.log(objPlain.Orange)
+
+
+// a call on map.entries will return the iterable value pairs,
+
+let xzObj = Object.fromEntries(myMap);
+console.log("xz:" + xzObj)
+
+
+// That’s the same, because Object.fromEntries expects 
+// an iterable object as the argument.Not necessarily
+//  an array.And the standard iteration for map returns 
+//  same key / value pairs as map.entries().So we get a 
+//  plain objectwith same key / values as the map.
