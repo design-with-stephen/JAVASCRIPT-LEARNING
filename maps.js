@@ -206,8 +206,12 @@ let xzObj = Object.fromEntries(myMap);
 console.log("xz:" + xzObj)
 
 
-// That’s the same, because Object.fromEntries expects 
+// That’s the same, because Object.fromEntries expects
 // an iterable object as the argument.Not necessarily
-//  an array.And the standard iteration for map returns 
-//  same key / value pairs as map.entries().So we get a 
+//  an array.And the standard iteration for map returns
+//  same key / value pairs as map.entries().So we get a
 //  plain objectwith same key / values as the map.
+
+
+
+
