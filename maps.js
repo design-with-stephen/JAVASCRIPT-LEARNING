@@ -53,25 +53,6 @@ if (exist) {
     console.log("item does not exist")
 }
 
-// to loop through maps , the forEach() loop can be used for example
-
-
-
-const allFruits = new Map([
-    ["apple", 5],
-    ["banana", 10],
-    ["cherry", 15],
-])
-
-// let i = "";
-// allFruits.forEach((value, key) => {
-//     i += ` ${key} : ${value}`;
-//     console.log(i);
-//     // i += key + '=' + value;
-//     // console.log(i);
-// })
-
-allFruits.entries();
 
 // summery
 
@@ -131,3 +112,88 @@ for (let entry of animals.entries()) {
 // NB
 //  the insertion order of the elements in the map is preserved, unlike in objects hence
 //  the order of the elements in iteration result
+
+
+
+// to loop through maps , the forEach() loop can be used for example
+// the forEach loop in map is a built in method that can also be used
+// to iterate through maps , it is similar to arrays 
+
+const allFruits = new Map([
+    ["apple", 5],
+    ["banana", 10],
+    ["cherry", 15],
+])
+
+let i = "";
+allFruits.forEach((value, key) => {
+    i += ` ${key} : ${value}`;
+    console.log(i);
+})
+
+
+// Objects.entries: Map from object
+
+//When a map is created, aan array can be passed or another iterable
+// with key/value pairs for initialization , like
+
+let map = new Map(
+    [
+        ["1", "value1"],
+        [1, "value2"],
+        [true, "value3"],
+    ]
+);
+
+console.log(map.get("1"))
+
+// To create a plain object, and we’d like to create a
+// Map from it, then we can use built-in method
+// Object.entries(obj) that returns an array of key/value
+// pairs for an object exactly in that format.
+
+// So we can create a map from an object like this:
+
+
+let obj = {
+    name: "peter",
+    age: 25
+};
+
+let mapFromObjects = new Map(Object.entries(obj));
+// map is now a map with the key/value pairs from obj
+
+console.log(mapFromObjects);
+console.log(mapFromObjects.get("name"))
+
+//Object.fromEntries: Object from Map
+// We’ve just seen how to create Map from a plain object
+// with Object.entries(obj).
+// There’s Object.fromEntries method that does the reverse:
+// given an array of[key, value] pairs, it creates an object from
+// them:
+
+let prices = Object.fromEntries([
+    ["banana", 1],
+    ["Orange", 2],
+    ["Apple", 3]
+  ]
+)
+// now an object has been created from the map
+console.log(prices);
+console.log(prices.Apple);
+
+// the object.fromEntries method can be
+// used to get a plain object from a map
+
+let myMap = new Map();
+
+myMap.set("banana", 1);
+myMap.set("Orange", 2);
+myMap.set("Apple", 3);
+// now a map has been created with the key/value
+// pairs from the object
+
+let objPlain = Object.fromEntries(myMap.entries())
+
+console.log(objPlain);
